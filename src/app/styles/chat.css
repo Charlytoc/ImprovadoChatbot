@@ -25,10 +25,7 @@
     width: 90%;
     margin: 0 auto;
 }
-.chat-wrapper {
-    width: 100%;
-    padding-top: 100px;
-}
+
 
 .chat-messages-container {
     background-color: rgba(246, 216, 226, 0.466);
@@ -88,5 +85,18 @@
         margin: 0px auto;
         overflow-y: auto;
     }
+    #chat-container > * {
+        font-size:20px;
+    }
+    .chat-title {
+        color: rgb(209, 9, 76);
+        font-size: 40px;
+        text-align: center;
+    }
+    .chat-wrapper {
+        width: 100%;
+        padding-top: 100px;
+    }
+    
 
 }
