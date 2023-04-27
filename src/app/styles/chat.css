@@ -1,22 +1,18 @@
 #chat-container {
     background-color: rgba(240, 248, 255, 0.263);
-    height: fit-content;
-    display: flex;
-    width: 60%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height: 100%;
+    display: block;
     gap: 5px;
     background-size: contain;
     margin: 0px auto;
-    overflow-y: auto;
 }
 #chat-container > * {
-    font-size: 23px;
+    font-size: 12px;
 }
 .chat-title {
     color: rgb(209, 9, 76);
-    font-size: 40px;
+    font-size: 14px;
+    text-align: center;
 }
 
 .svg-container {
@@ -27,11 +23,10 @@
 }
 .svg-container > img {
     width: 90%;
+    margin: 0 auto;
 }
 .chat-wrapper {
     width: 100%;
-    height: 100%;
-    padding: 20px;
     padding-top: 100px;
 }
 
@@ -40,12 +35,10 @@
 
     height: 80%;
     color: rgb(209, 9, 76);
-    padding: 15px;
+    padding: 2px;
 
 }
-.chat-messages-container > * {
-    margin-top: 20px;
-}
+
 .bot-message-bubble {
     background-color: rgb(237, 225, 233);
     padding: 10px;
@@ -66,16 +59,34 @@
 }
 .chat-footer > input{
         width: 100%;
-        height: 100%;
+        height: 10%;
         background-color: rgba(255, 255, 255, 0.66);
         border: 0;
         border-radius: 10px;
         color: rgb(44, 2, 27);
-        font-size: 25px;
+        font-size:12px;
         padding: 10px;
         font-weight: 700;
 }
 .chat-footer > input:focus {
     outline: none;
     border: 2px solid rgb(209, 9, 76);
+}
+
+@media (min-width: 768px) { 
+
+    #chat-container {
+        background-color: rgba(240, 248, 255, 0.263);
+        height: fit-content;
+        display: flex;
+        width: 60%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        background-size: contain;
+        margin: 0px auto;
+        overflow-y: auto;
+    }
+
 }
