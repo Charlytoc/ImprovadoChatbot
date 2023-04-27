@@ -31,8 +31,6 @@ html {
     min-width: 100%;
     font-family: 'Dosis', sans-serif;
     cursor: none;
-    padding-top: 50px;
-    padding-bottom: 100px;
 }
 
 .var-1 {color:var(--color-mint) !important}
