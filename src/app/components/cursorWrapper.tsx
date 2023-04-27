@@ -9,7 +9,7 @@ export default function CursorWrapper ({
         cursor.style.left = e.clientX + 'px';
         cursor.style.top = e.clientY + 'px';
     }
-    return <div onMouseMove={handleMouseMove}>
+    return <div className="container-a" onMouseMove={handleMouseMove}>
         <div className="cursor"></div>
         {children}
     </div>

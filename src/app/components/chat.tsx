@@ -2,17 +2,19 @@
 import { queryParams } from "../interfaces/params"
 import { chatHelper } from "../helpers/chatHelper"
 import { useState, useEffect } from "react"
+import Image, { StaticImageData } from 'next/image'
 import axios from "axios"
+import IMPROVADO_LOGO from '../resources/impro-icon.png'
 export default function Chat ({params}: queryParams) {
-    const [showChat, setShowChat] = useState(false)
+    const [showChat, setShowChat] = useState(true)
     const [question, setQuestion] = useState("")
-    const [lastBotMessage, setLastBotMessage] = useState(`Hello, ${params.visitor}, ${chatHelper.welcome}`)
-    const [lastQuestion, setLastQuestion] = useState(`Hi Charly! I'm ${params.visitor}, I want to make questions for you`)
+    const [lastBotMessage, setLastBotMessage] = useState(`Hello, ${chatHelper.welcome}`)
+    const [lastQuestion, setLastQuestion] = useState(`Hi Improvado, I want to make questions about you`)
     const [bufferQuestion, setBufferQuestion] = useState("")
     const [chatMessages, setChatMessages] = useState([
         {
             type: 'bot',
-            message:  `Hi, ${params.visitor}! ${chatHelper.welcome}`,
+            message:  `Hello there! ${chatHelper.welcome}`,
             divClass: `bot-message-bubble`,
             spanClass: `bot-message`,
             iconClass: `fa-solid fa-brain`
@@ -81,12 +83,10 @@ export default function Chat ({params}: queryParams) {
           }
     }
     return <>
-    {
-        showChat && <div id="chat-container">
+     <div id="chat-container">
         <div className="chat-header">
-            <div className="svg-container"><i className="fa-solid fa-brain"></i></div>
-            <div className="chat-title"><p>Charlybot</p></div>
-            <div className="button-container"><button onClick={()=> setShowChat(!showChat)}><i className="fa-regular fa-circle-xmark"></i></button></div>
+            <div className="svg-container"> <Image src={IMPROVADO_LOGO} alt="My Image" /></div>
+            <div className="chat-title"><p>Improvado assistant</p></div>
         </div>
         <div className="chat-messages-container">
         {chatMessages.map((item, index) => 
@@ -99,14 +99,8 @@ export default function Chat ({params}: queryParams) {
         </div>
         <div className="chat-footer">
             <input onKeyUp={(e)=> handleKeyUp(e)} value={question} className="input-question" type="text" onChange={(e)=> {setQuestion(e.target.value), setBufferQuestion(e.target.value)}} />
-            <button onClick={sendData}><i className="fa-solid fa-paper-plane"></i></button>
         </div>
     </div>
-    }
-    {
-        !showChat && <div onClick={()=> setShowChat(!showChat)} id="talk-to-chat">
-            <span>Talk to the AI </span><i className="fa-solid fa-brain"></i>
-        </div>
-    }
     </>
 }
+
