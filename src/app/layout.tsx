@@ -8,8 +8,8 @@ import './styles/balloons.css'
 import './styles/map.css'
 import './styles/contact.css'
 export const metadata = {
-  title: 'Charlytoc awesome portfolio',
-  description: 'Here you will to know me better than my mother',
+  title: 'Improvado assistant',
+  description: 'Easy answer questions about Improvado',
 }
 
 export default function RootLayout({
